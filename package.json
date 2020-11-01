@@ -1,0 +1,11 @@
+{
+  "name": "perguntaserepostas",
+  "version": "1.0.0",
+  "description": "plataforma de perguntas e respostas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "wene alves",
+  "license": "ISC"
+}
