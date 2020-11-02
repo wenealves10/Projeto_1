@@ -8,12 +8,14 @@
             <a href="/perguntar" class="btn btn-success">Fazer pergunta</a>
         <hr>
         <% perguntas.forEach(pergunta => { %>
-            <div class="card d-flex">
+            <div class="card mb-2">
                 <div class="card-body">
                     <h3><%= pergunta.title %></h3>
                 </div>
                 <div class="card-footer">
-                    <button class="btn btn-success">Responder</button>
+                    <a href="/pergunta/<%= pergunta.id %>">
+                       <button class="btn btn-success">Responder</button>
+                    </a>
                 </div>
             </div>
         <% }) %> 
