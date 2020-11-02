@@ -7,10 +7,13 @@ app.set('view engine','ejs')
 app.get('/',(req, res) => {
     let nome = 'Wene Alves'
     let lang = 'JavaScript'
+    let mostraHora = false
+    let horaCerta = new Date()
     res.render('index',{
         nome,
         lang,
-        musica: 'Drown lang'
+        musica: 'Drown lang',
+        mostraHora: (horaCerta.getHours() >= 18 && horaCerta.getHours() <= 23) ? true : false
     })
 })
 
