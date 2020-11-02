@@ -1,15 +1,9 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
+<%- include('./partials/header.ejs') %>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Perguntas e Respostas</title>
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/style.css">
-</head>
 <body>
-    
+
+    <%- include('./partials/navbar.ejs') %>
+
     <div class="container">
         <div class="card">
             <div class="card-header">
@@ -18,23 +12,16 @@
             <div class="card-body">
                 <form action="">
                     <label for="titulo">Title</label>
-                    <input class="form-control" id="titulo" type="text" placeholder="Digite o Titúlo"/> 
+                    <input class="form-control" id="titulo" type="text" placeholder="Digite o Titúlo" />
                     <br><label for="descricao">Description</label>
-                    <textarea class="form-control" id="descricao" name="descricao" placeholder="Digite sua pergunta aqui"></textarea>
-                    <button class="btn btn-info mt-3">Perguntar</button> 
+                    <textarea class="form-control" id="descricao" name="descricao"
+                        placeholder="Digite sua pergunta aqui"></textarea>
+                    <button class="btn btn-success mt-3">Perguntar</button>
                 </form>
             </div>
         </div>
     </div>
 
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-    </script>
-    <script src="/js/bootstrap.min.js"></script>
-    <script src="/js/script.js"></script>
 </body>
-</html>
+
+<%- include('./partials/footer.ejs') %>
