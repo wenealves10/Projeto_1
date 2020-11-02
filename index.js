@@ -27,8 +27,14 @@ app.get('/perguntar', (req, res) =>{
 })
 
 app.post('/salvarpergunta',(req, res) => {
-    console.log(req.body)
-    res.redirect('/')
+   let title = req.body.title
+   let description = req.body.description
+   Pergunta.create({
+       title,
+       description
+   }).then(() =>{
+       res.redirect('/')
+   })
 })
 
 app.listen(port, () =>{
