@@ -9,7 +9,7 @@ connection
     .then(() => {
       console.log('Conexão fei com sucesso!')      
     }).catch((err) => {
-          console.log('Aconteceu o erro ao se conectar com banco de dados '+ err)  
+          console.log('Aconteceu o erro ao se conectar com banco de dados: '+ err)  
     });
 
 app.set('view engine','ejs')
