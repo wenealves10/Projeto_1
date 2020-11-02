@@ -27,8 +27,10 @@ app.get('/perguntar', (req, res) =>{
 })
 
 app.post('/salvarpergunta',(req, res) => {
-    console.log(req.body)
-    res.send('Enviado com sucesso!')
+    let title = req.body.title
+    let description = req.body.description
+    console.log(title, description)
+    res.redirect('/')
 })
 
 app.listen(port, () =>{
