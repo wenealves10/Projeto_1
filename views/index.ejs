@@ -2,6 +2,23 @@
 
 <body>
     <%- include('./partials/navbar.ejs') %>
+    <div class="container">
+        <hr>
+            <h1>Perguntar</h1>
+            <a href="/perguntar" class="btn btn-success">Fazer pergunta</a>
+        <hr>
+        <% perguntas.forEach(pergunta => { %>
+            <div class="card d-flex">
+                <div class="card-body">
+                    <h3><%= pergunta.title %></h3>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-success">Responder</button>
+                </div>
+            </div>
+        <% }) %> 
+    </div>
+    
 </body>
 
 <%- include('./partials/footer.ejs') %>
