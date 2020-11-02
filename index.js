@@ -27,9 +27,7 @@ app.get('/perguntar', (req, res) =>{
 })
 
 app.post('/salvarpergunta',(req, res) => {
-    let title = req.body.title
-    let description = req.body.description
-    console.log(title, description)
+    console.log(req.body)
     res.redirect('/')
 })
 
