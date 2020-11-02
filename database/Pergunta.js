@@ -17,3 +17,5 @@ Pergunta.sync({force: false}).then(() => {
 }).catch((err) => {
     console.log('Erro na criação da tabela!: '+err)
 });
+
+module.exports = Pergunta
