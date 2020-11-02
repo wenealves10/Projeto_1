@@ -13,6 +13,10 @@ app.get('/perguntar', (req, res) =>{
     res.render('perguntar')
 })
 
+app.post('/salvarpergunta',(req, res) => {
+    res.send('Enviado com sucesso!')
+})
+
 app.listen(port, () =>{
     console.log('Servidor rodando.....')
 })
