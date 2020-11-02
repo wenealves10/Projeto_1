@@ -18,6 +18,15 @@
                 </form>
             </div>
         </div>
+        <hr>
+        <h3>Respostas</h3>
+        <% respostas.forEach(resposta => {%>
+            <div class="card bg-dark text-light mb-4">
+                <div class="card-body">
+                    <p><%= resposta.body %></p>
+                </div>
+            </div>
+        <% }) %>
     </div>
 
 </body>
