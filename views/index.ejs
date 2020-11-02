@@ -15,36 +15,7 @@
 </style>
 
 <body>
-    <h1><%= nome%></h1>
-    <h2><%= lang %> </h2>
-    <h3><%= musica %></h3>
 
-    <% if(mostraHora === true){%>
-        <button>Aberto</button>
-        <p>Fecha às 23:59:59 horas</p>
-    <% } else { %>
-        <button>Fechado</button>
-        <p>Só abre às 18 horas</p>
-    <% } %>
-
-    <% produtos.forEach(produto => { %> 
-       <div style="background-color: rgb(209, 203, 203); width: 90vw; height: 70px; margin: 10px auto; text-align: center;">
-            <h2 style="text-align: center; color:rgb(143, 29, 97);"><%= produto.nome %> </h2>
-            <button  style="
-                width: 70%;
-                font-size: 1.2rem;
-                border: none;
-                cursor: pointer;
-                background: #4b4040;
-                color: #ffffff;
-                display: inline-block;
-                margin: 5px -2px;
-                padding: 5px 10px;
-                border: 1px solid #666666;
-                ">Compra</button>
-
-       </div>
-    <% }) %> 
 </body>
 
 </html>
