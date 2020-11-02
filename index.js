@@ -1,7 +1,16 @@
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
+const connection = require('./database/database')
 const port = 8080
+
+connection
+    .authenticate()
+    .then(() => {
+      console.log('Conexão fei com sucesso!')      
+    }).catch((err) => {
+          console.log('Aconteceu o erro ao se conectar com banco de dados '+ err)  
+    });
 
 app.set('view engine','ejs')
 app.use(express.static('public'))
