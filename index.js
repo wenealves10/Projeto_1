@@ -51,7 +51,7 @@ app.get('/pergunta/:id', (req, res) =>{
             id: id
         }
     }).then(pergunta =>{
-        if(pergunta !== undefined){
+        if(pergunta != undefined){
             res.render('pergunta',{
                 pergunta
             })
