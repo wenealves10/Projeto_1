@@ -11,9 +11,9 @@
             </div>
             <div class="card-footer">
                 <form action="/resposta" method="POST">
-                    <input type="hidden" name="questionID" value="<%= pergunta.id %>">
+                    <input required type="hidden" name="questionID" value="<%= pergunta.id %>">
                     <label for="resp"><strong>Responder</strong></label>
-                    <textarea name="body" id="resp" class="form-control" placeholder="Digite sua resposta"></textarea>
+                    <textarea required name="body" id="resp" class="form-control" placeholder="Digite sua resposta"></textarea>
                     <button type="submit"class="btn btn-light mt-2">Enviar Resposta</button>
                 </form>
             </div>
