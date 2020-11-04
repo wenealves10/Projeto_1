@@ -4,6 +4,7 @@ const bodyParser = require('body-parser')
 const connection = require('./database/database')
 const Pergunta = require('./database/Pergunta')
 const Resposta = require('./database/Resposta')
+const axios = require('axios')
 const port = 8080
 
 connection
@@ -67,10 +68,12 @@ app.get('/pergunta/:id', (req, res) => {
 app.post('/salvarpergunta', (req, res) => {
     let title = req.body.title
     let description = req.body.description
-    if(title != '' && description != ''){
+    let email = req.body.email
+    if(title && description && email){
         Pergunta.create({
             title,
-            description
+            description,
+            email
         }).then(() => {
             res.redirect('/')
         })
@@ -83,11 +86,20 @@ app.post('/salvarpergunta', (req, res) => {
 app.post('/resposta', (req, res) => {
     let questionID = req.body.questionID
     let body = req.body.body
+    let email = req.body.email
     if(body != ''){
         Resposta.create({
             questionID,
             body
         }).then(() => {
+            axios({
+                method: 'post',
+                url: 'http://localhost:4000/email',
+                data: {
+                  email: email,
+                  id: questionID
+                }
+              });
             res.redirect('/pergunta/' + req.body.questionID)
         })
     }else{

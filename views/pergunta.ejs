@@ -12,6 +12,7 @@
             <div class="card-footer">
                 <form action="/resposta" method="POST">
                     <input required type="hidden" name="questionID" value="<%= pergunta.id %>">
+                    <input required type="hidden" name="email" value="<%= pergunta.email %>">
                     <label for="resp"><strong>Responder</strong></label>
                     <textarea required name="body" id="resp" class="form-control" placeholder="Digite sua resposta"></textarea>
                     <button type="submit"class="btn btn-light mt-2">Enviar Resposta</button>
