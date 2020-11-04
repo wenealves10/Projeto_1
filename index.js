@@ -67,24 +67,33 @@ app.get('/pergunta/:id', (req, res) => {
 app.post('/salvarpergunta', (req, res) => {
     let title = req.body.title
     let description = req.body.description
-    Pergunta.create({
-        title,
-        description
-    }).then(() => {
+    if(title != '' && description != ''){
+        Pergunta.create({
+            title,
+            description
+        }).then(() => {
+            res.redirect('/')
+        })
+    }else{
         res.redirect('/')
-    })
+    }
+   
 })
 
 app.post('/resposta', (req, res) => {
     let questionID = req.body.questionID
     let body = req.body.body
-    Resposta.create({
-        questionID,
-        body
-    }).then(() => {
+    if(body != ''){
+        Resposta.create({
+            questionID,
+            body
+        }).then(() => {
+            res.redirect('/pergunta/' + req.body.questionID)
+        })
+    }else{
         res.redirect('/pergunta/' + req.body.questionID)
-    })
-
+    }
+   
 })
 
 
