@@ -1,3 +1,4 @@
+require('dotenv/config')
 const express = require('express')
 const app = express()
 const bodyParser = require('body-parser')
@@ -94,7 +95,7 @@ app.post('/resposta', (req, res) => {
         }).then(() => {
             axios({
                 method: 'post',
-                url: 'http://localhost:4000/email',
+                url: `http://${process.env.HOST_NAME}/email`,
                 data: {
                   email: email,
                   id: questionID
