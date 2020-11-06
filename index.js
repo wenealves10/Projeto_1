@@ -100,7 +100,8 @@ app.post('/resposta', (req, res) => {
                   email: email,
                   id: questionID
                 }
-              });
+              }).then(resp => console.log(resp.data))
+              .catch(err => console.log(err))
             res.redirect('/pergunta/' + req.body.questionID)
         })
     }else{
