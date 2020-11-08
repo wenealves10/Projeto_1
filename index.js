@@ -101,7 +101,7 @@ app.post('/resposta', (req, res) => {
                   id: questionID
                 }
               }).then(resp => console.log(resp.data))
-              .catch(err => console.log(err))
+              .catch(err => console.log('erro'))
             res.redirect('/pergunta/' + req.body.questionID)
         })
     }else{
