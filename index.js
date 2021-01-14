@@ -6,7 +6,7 @@ const connection = require('./database/database')
 const Pergunta = require('./database/Pergunta')
 const Resposta = require('./database/Resposta')
 const axios = require('axios')
-const port = 8080
+const port = 3000
 
 connection
     .authenticate()
